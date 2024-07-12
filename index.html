@@ -10,13 +10,23 @@
     <div id="app">
       <div>
         <label for="goal"> Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+        <input type="text" id="goal" v-model="entredValue" />
+        <button v-on:click="addGoal">Add Goal</button>
       </div>
       <ul>
-        <li>Test</li>
+        <li v-for="(goal, index) in goals" :key="goal">
+          {{ goal}}
+          <button v-on:click="deleteGoal(goal)">delete</button>
+          <button v-on:click="enableUpdate(index)">Update</button>
+        </li>
       </ul>
+      <div v-if="isUpdating !== null">
+        <label for="updateGoal">Update Goal</label>
+        <input type="text" id="updateGoal" v-model="updatedValue" />
+        <button v-on:click="updateGoal">Confirm Update</button>
+      </div>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
