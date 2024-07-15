@@ -3,7 +3,6 @@ const app = Vue.createApp({
     return {
       name: "fatiha",
       age: 24,
-      age5: 29,
       couleur1: "bleu",
       couleur2: "black",
       image:
