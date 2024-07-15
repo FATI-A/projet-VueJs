@@ -17,9 +17,22 @@
   </header>
   <section id="events">
     <h2>Events in Action</h2>
-    <button v-on:click="addCounter(5)">Add</button>
-    <button v-on:click="removeCounter(10)">Reduce</button>
+    <button v-on:click.left="addCounter(5)">Add</button>
+    <!-- left, right pour bloquer l'autre button  -->
+    <button v-on:click.right="removeCounter(10)">Reduce</button>
+    <p v-once>Starting Counter :{{counter }}</p>
+    <!-- once pour la premeire valuer  -->
     <p>Result: {{counter }}</p>
+    <!-- <input  type="text" v-on:input ="setName"> -->
+    <!-- <input type="text" v-bind:value="name" v-on:input="setName($event, 'zaki')" v-on:keyup.enter="confimInput"> -->
+    <input type="text" v-model="name" v-on:keyup.enter="confimInput">
+    <!-- v-model =v-on:input + v-on:keyup -->
+     <button v-on:click="resetInput">Rest Input</button>
+    <p> Your name :{{confirmedName }}</p>
+    <!-- <form v-on:submit.prevent="submitForm">
+      <input type="text">
+      <button>Sing Up</button>
+    </form> -->
   </section>
 </body>
 
