@@ -3,7 +3,9 @@ const app = Vue.createApp({
     return {
       counter: 12,
       name: "",
-      confirmedName:" ",
+      confirmedName: " ",
+      Lastname: " ",
+      last: " ",
     };
   },
   methods: {
@@ -19,9 +21,9 @@ const app = Vue.createApp({
 
       return (this.counter = this.counter - num);
     },
-    setName(event, lastName) {
-      this.name = event.target.value + " " + lastName;
-    },
+    // setName(event, lastName) {
+    //   this.name = event.target.value + " " + lastName;
+    // },
     // setName(event) {
     //   this.name = event.target.value ;
     // },
@@ -33,15 +35,27 @@ const app = Vue.createApp({
     //   // l'action par défaut lorsque vous cliquez sur ce bouton est de soumettre le formulaire et de rafraîchir la page. En utilisant event.preventDefault(), empêcher ce comportement par défaut.
     //   alert("submitted !");
     // },
+    outPutFullName() {
+      if (this.name === "") {
+        return " ";
+      }
+      return this.name + " " + this.Lastname;
+    },
     submitForm() {
-       alert("submitted !");
-     },
-     confimInput(){
-      this.confirmedName =this.name;
-     },
-     resetInput(){
-      this.name=''
-     }
+      alert("submitted !");
+    },
+    confimInput() {
+      this.confirmedName = this.name;
+    },
+    lastLast() {
+      this.last = this.Lastname;
+    },
+    resetInput() {
+      this.name = "";
+      this.Lastname=" ",
+      this.last="",
+      this.confirmedName= " "
+    },
   },
 });
 app.mount("#events");
