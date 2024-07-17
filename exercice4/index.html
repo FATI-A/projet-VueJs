@@ -9,17 +9,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@3" defer></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Vue Dynamic Styling</h1>
+      <h1>Vue Course Goals</h1>
     </header>
-    <section id="styling">
-      <div class="demo" :style="{borderColor: boxASelected ? 'red' : 'black'}" @click="boxSelected('A')"></div>
-      <div  :class=" boxBSelected ? 'demo active' : 'demo' " @click="boxSelected('B')"></div>
-      <div class="demo"   :style="{borderColor: boxCSelected ? 'green' : 'black'}" @click="boxSelected('C')"></div>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" />
+      <button>Add Goal</button>
+      <p>No goals have been added yet - please start adding some!</p>
+      <ul>
+        <li>Goal</li>
+      </ul>
     </section>
   </body>
 </html>
