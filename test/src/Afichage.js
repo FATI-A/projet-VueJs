@@ -43,22 +43,22 @@ const Afichage = () => {
   //   }
   // };
 
-  const formData = {
-    name: "Jane Doe",
-    email: "jane.doe@example.com",
-    password: "securepassword123",
-  };
+  // const formData = {
+  //   name: "Jane Doe",
+  //   email: "jane.doe@example.com",
+  //   password: "securepassword123",
+  // };
 
-  fetch("https://example.com/api/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
+  // fetch("https://example.com/api/register", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(formData),
+  // })
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((error) => console.error("Error:", error));
 
   return (
     <div>
