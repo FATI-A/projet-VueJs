@@ -13,3 +13,12 @@ function fibonacci(n) {
 // Test
 const fibSeq = fibonacci(10);
 console.log(fibSeq); // Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
