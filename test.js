@@ -37,3 +37,10 @@ function delay(ms) {
 // Test
 delay(1000).then(() => console.log("Executed after 1 second"));
 
+function sum() {
+  return [...arguments].reduce((total, num) => total + num, 0);
+}
+
+// Test
+console.log(sum(1, 2, 3, 4)); // Output: 10
+
