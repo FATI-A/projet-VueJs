@@ -29,3 +29,11 @@ function countCharacterOccurrences(str) {
 
 // Test
 console.log(countCharacterOccurrences("hello")); // Output: {h: 1, e: 1, l: 2, o: 1}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Test
+delay(1000).then(() => console.log("Executed after 1 second"));
+
