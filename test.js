@@ -50,3 +50,10 @@ function sortArray(arr) {
 
 // Test
 console.log(sortArray([5, 3, 8, 1, 2])); // Output: [1, 2, 3, 5, 8]
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+// Test
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
