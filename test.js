@@ -44,3 +44,9 @@ function sum() {
 // Test
 console.log(sum(1, 2, 3, 4)); // Output: 10
 
+function sortArray(arr) {
+  return arr.sort((a, b) => a - b);
+}
+
+// Test
+console.log(sortArray([5, 3, 8, 1, 2])); // Output: [1, 2, 3, 5, 8]
