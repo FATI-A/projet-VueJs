@@ -78,3 +78,13 @@ function areObjectsEqual(obj1, obj2) {
 // Test
 console.log(areObjectsEqual({a: 1, b: 2}, {a: 1, b: 2})); // Output: true
 console.log(areObjectsEqual({a: 1, b: 2}, {a: 1, b: 3})); // Output: false
+
+function flattenArray(arr) {
+  return arr.reduce((flat, toFlatten) => {
+    return flat.concat(Array.isArray(toFlatten) ? flattenArray(toFlatten) : toFlatten);
+  }, []);
+}
+
+// Test
+console.log(flattenArray([1, [2, [3, 4], 5]])); // Output: [1, 2, 3, 4, 5]
+
