@@ -134,3 +134,16 @@ function sum() {
 
 // Test
 console.log(sum(1, 2, 3, 4)); // Output: 10
+
+
+const data = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 20 }
+];
+
+function filterByAge(array, age) {
+  return array.filter(item => item.age > age);
+}
+
+console.log(filterByAge(data, 25)); // Output: [{ name: 'Bob', age: 30 }]
