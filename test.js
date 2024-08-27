@@ -127,3 +127,10 @@ function countCharacterOccurrences(str) {
 
 // Test
 console.log(countCharacterOccurrences("hello")); // Output: {h: 1, e: 1, l: 2, o: 1}
+
+function sum() {
+  return [...arguments].reduce((total, num) => total + num, 0);
+}
+
+// Test
+console.log(sum(1, 2, 3, 4)); // Output: 10
