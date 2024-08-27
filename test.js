@@ -118,3 +118,12 @@ console.log(areObjectsEqual({a: 1, b: 2}, {a: 1, b: 2})); // Output: true
 console.log(areObjectsEqual({a: 1, b: 2}, {a: 1, b: 3})); // Output: false
 
 
+function countCharacterOccurrences(str) {
+  return str.split('').reduce((count, char) => {
+    count[char] = count[char] ? count[char] + 1 : 1;
+    return count;
+  }, {});
+}
+
+// Test
+console.log(countCharacterOccurrences("hello")); // Output: {h: 1, e: 1, l: 2, o: 1}
