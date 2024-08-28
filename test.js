@@ -149,19 +149,19 @@ function filterByAge(array, age) {
 console.log(filterByAge(data, 25)); // Output: [{ name: 'Bob', age: 30 }]
 
 
-function countVowels(str) {
-  const vowels = 'aeiouAEIOU';
-  let count = 0;
-  for (let char of str) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-  return count;
-}
+// function countVowels(str) {
+//   const vowels = 'aeiouAEIOU';
+//   let count = 0;
+//   for (let char of str) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
 
-console.log(countVowels('hello')); // Output: 2
-console.log(countVowels('programming')); // Output: 3
+// console.log(countVowels('hello')); // Output: 2
+// console.log(countVowels('programming')); // Output: 3
 
 // function mergeSortedArrays(arr1, arr2) {
 //   let merged = [], i = 0, j = 0;
