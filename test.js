@@ -7,17 +7,17 @@ console.log(findElement(fruits, "banana")); // Output: true
 console.log(findElement(fruits, "grape")); // Output: false
 
 
-const data = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 },
-  { name: 'Charlie', age: 20 }
-];
+// const data = [
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 30 },
+//   { name: 'Charlie', age: 20 }
+// ];
 
-function filterByAge(array, age) {
-  return array.filter(item => item.age > age);
-}
+// function filterByAge(array, age) {
+//   return array.filter(item => item.age > age);
+// }
 
-console.log(filterByAge(data, 25)); // Output: [{ name: 'Bob', age: 30 }]
+// console.log(filterByAge(data, 25)); // Output: [{ name: 'Bob', age: 30 }]
 
 
 function countCharacterOccurrences(str) {
@@ -147,3 +147,19 @@ function filterByAge(array, age) {
 }
 
 console.log(filterByAge(data, 25)); // Output: [{ name: 'Bob', age: 30 }]
+
+
+function countVowels(str) {
+  const vowels = 'aeiouAEIOU';
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countVowels('hello')); // Output: 2
+console.log(countVowels('programming')); // Output: 3
+
