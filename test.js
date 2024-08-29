@@ -155,6 +155,19 @@ function countOccurrences(arr, value) {
 console.log(countOccurrences([1, 2, 3, 2, 2, 3, 4], 2)); // Output: 3
 
 
+function countVowels(str) {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+
+
 // function countVowels(str) {
 //   const vowels = 'aeiouAEIOU';
 //   let count = 0;
