@@ -5,6 +5,7 @@
       {{ detailsVisible ? "hide" : "show" }} Details
     </button>
     <button @click="toggleFavorites">Favorite</button>
+     <button @click="deleteFriend">Delete</button>
     <ul v-if="detailsVisible">
       <li><strong>Phone:</strong>{{ phoneNumber }}</li>
       <li><strong>Email:</strong> {{ emailAddress }}</li>
@@ -46,6 +47,17 @@ export default {
       //   }
     },
   },
+  emits : ['toggle-favorites', "delete-friend"],
+//   emits :{
+// 'toggle-favorites' : function(id){
+//     if (id){
+//         return true ;
+//     } else {
+//         console.warn('id is missing');
+//         return false ;
+//     }
+// }
+//   },
   data() {
     return {
       detailsVisible: false,
@@ -65,6 +77,8 @@ export default {
       this.$emit("toggle-favorites", this.id);
       // emit pour envoyer des infos de fils au parent
     },
-  },
+    deleteFriend() {
+     this.$emit("delete-friend", this.id);
+    } },
 };
 </script>
