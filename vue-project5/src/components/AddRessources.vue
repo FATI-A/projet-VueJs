@@ -1,33 +1,76 @@
 <template>
+  <div>
+    <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close='confirmError'>
+      <template #default>
+        <p>Unfortunately, at least one input in invalid.</p>
+        <p>
+          please check all inputs and make sure you enter at least a few
+          characters
+        </p>
+      </template>
+      <template #actions>
+        <base-button @click="confirmError">Okay</base-button>
+      </template>
+    </base-dialog>
     <base-card>
-    <form>
+      <form @submit.prevent="submitData">
         <div class="form-control">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title">
-        </div>
-         <div class="form-control">
-        <label for="description ">description</label>
-        <textarea id="description" name="description" rows="3">description</textarea>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" ref="titleInput" />
         </div>
         <div class="form-control">
-        <label for="link">link</label>
-        <input type="url" name="link" id="link">
+          <label for="description ">description</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="3"
+            ref="descriptionInput"
+          ></textarea>
+        </div>
+        <div class="form-control">
+          <label for="link">link</label>
+          <input type="url" name="link" id="link" ref="linkInput" />
         </div>
         <div>
-            <base-button type="submit">ADD Ressources</base-button>
+          <base-button type="submit">ADD Ressources</base-button>
         </div>
-    </form>
-    
+      </form>
     </base-card>
+  </div>
 </template>
 <script>
-import BaseButton from './UI/BaseButton.vue'
-import BaseCard from './UI/BaseCard.vue'
-
+import BaseButton from './UI/BaseButton.vue';
+import BaseDialog from './UI/BaseDialog.vue';
 export default {
-  components: { BaseCard, BaseButton },
-
-}
+  components: { BaseDialog, BaseButton },
+  inject: ['AddRessource'],
+  data() {
+    return {
+      inputIsInvalid: false,
+    };
+  },
+  methods: {
+    submitData() {
+      const entredTitle = this.$refs.titleInput.value;
+      const entredDescription = this.$refs.descriptionInput.value;
+      const entredLink = this.$refs.linkInput.value;
+      if (
+        entredTitle.trim() === '' ||
+        entredDescription.trim() === '' ||
+        entredLink.trim() === ''
+      ) {
+        this.inputIsInvalid = true;
+        return;
+      } else {
+        this.AddRessource(entredTitle, entredDescription, entredLink);
+      }
+    },
+    confirmError(){
+    this.inputIsInvalid = false;
+  }
+  },
+  
+};
 </script>
 <style scoped>
 label {
