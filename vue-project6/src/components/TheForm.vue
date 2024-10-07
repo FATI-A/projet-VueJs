@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{invalid : userNameValidaty === 'invalid'}">
+    <div
+      class="form-control"
+      :class="{ invalid: userNameValidaty === 'invalid' }"
+    >
       <label for="user-name">Your Name</label>
       <input
         id="user-name"
@@ -96,6 +99,9 @@
       </div>
     </div>
     <div class="form-control">
+      <rating-control v-model="rating"></rating-control>
+    </div>
+    <div class="form-control">
       <input
         type="checkbox"
         id="confirm-terms "
@@ -110,7 +116,9 @@
   </form>
 </template>
 <script>
+import RatingControl from './RatingControl.vue';
 export default {
+  components: { RatingControl },
   data() {
     return {
       userName: '',
@@ -119,6 +127,7 @@ export default {
       interest: [],
       how: null,
       terms: false,
+      rating: null,
       userNameValidaty: 'pending',
     };
   },
@@ -136,6 +145,8 @@ export default {
       this.how = null;
       console.log('terms', this.terms);
       this.terms = false;
+      console.log('rating', this.rating);
+      this.rating = null;
     },
     validateInput() {
       if (this.userName.trim() === '') {
@@ -162,14 +173,14 @@ form {
   margin: 0.5rem 0;
 }
 .form-control.invalid input {
-border-color: red;
+  border-color: red;
 }
 
 .form-control.invalid label {
-color: red;
+  color: red;
 }
 .form-control.invalid p {
-color: red;
+  color: red;
 }
 label {
   font-weight: bold;
